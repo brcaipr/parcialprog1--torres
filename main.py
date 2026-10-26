@@ -61,6 +61,11 @@ def buscar_alumno(nombres, nota_1, nota_2, promedios):
         print("Nota 2|: ", nota_2[indice_buscado])
         print("Promedio: ", promedios[indice_buscado])
 
+#Punto 6)
+def jugar_con_nombre():
+    nombre = validaciones.pedir_nombre()
+    print("Nombre invertido: ", procesamiento.invertir_nombre(nombre))
+    print("Cantidad de vocales contadas: ", procesamiento.contar_cant_vocales(nombre))
     
 def mostrar_menu():
     """Muestra las opciones del menú principal."""
@@ -96,13 +101,15 @@ def main():
                     print("No se pueden mostrar estadisticas sin que se carguen alumnos.")
                 else:
                     mostrar_estadisticas(nombres,promedios)
-            case "4" | "6":
+            case "4":
                 print("Opción en mantenimiento.")
             case "5":
                 if len(nombres) == 0:
                     print("No se pueden mostrar estadisticas sin que se carguen alumnos.")
                 else:
                     buscar_alumno(nombres, notas_parcial_1, notas_parcial_2, promedios)
+            case "6":
+                jugar_con_nombre()
             case "0":
                 print("Cerrando programa...")
             case _:

@@ -57,3 +57,24 @@ def buscar_alumno(nombres, nombre_buscado):
         if nombres[i] == nombre_buscado:
             indice_alumno_buscado = i
     return indice_alumno_buscado
+
+#punto 6)
+def invertir_nombre(nombre):
+    """Devuelve el nom,bre esctito al revez."""
+    texto_invertido = "" #arranca vacio el texto a invertir
+    for i in range(len(nombre) - 1, -1, -1):#arranca con el ultimo indice del nombre al restar -1
+        texto_invertido = texto_invertido + nombre[i]
+    return texto_invertido
+
+
+def contar_cant_vocales(nombre):
+    """Devuelve cuántas vocales tiene el nombre."""
+    cantidad_vocales = 0
+    for i in range(len(nombre)):
+        caracter = nombre[i]
+        if (caracter == "a" or caracter == "e" or caracter == "i"
+                or caracter == "o" or caracter == "u"
+                or caracter == "A" or caracter == "E" or caracter == "I"
+                or caracter == "O" or caracter == "U"):
+            cantidad_vocales = cantidad_vocales + 1
+    return cantidad_vocales
