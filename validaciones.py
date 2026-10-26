@@ -8,13 +8,12 @@ MIN_CARACTERES_NOMBRE = 5
 
 
 def pedir_cantidad_alumnos():
-    """Pide la cantidad de alumnos (entre 1 y 30) y la devuelve."""
-    return pedir_entero_en_rango("Cantidad de alumnos (1 a 30): ",MIN_ALUMNOS, MAX_ALUMNOS)
+    """Pide la cantidad de alumnos y la devuelve."""
+    return pedir_entero_en_rango("Cantidad de alumnos (puede ser de 1 a 30): ",MIN_ALUMNOS, MAX_ALUMNOS)
 
 
 def es_entero(texto):
-    """Devuelve True si el texto tiene al menos un carácter y son
-    todos dígitos del 0 al 9."""
+    """Devuelve True si el texto tiene al menos un carácter y son todos dígitos del 0 al 9."""
     if len(texto) == 0:
         return False
     for i in range(len(texto)):
@@ -24,8 +23,7 @@ def es_entero(texto):
 
 
 def es_letra_o_espacio(caracter):
-    """Devuelve True si el carácter es una letra (a-z, A-Z) o un
-    espacio."""
+    """Devuelve True si el carácter es una letra (a-z, A-Z) o un espacio."""
     es_minuscula = "a" <= caracter <= "z"
     es_mayuscula = "A" <= caracter <= "Z"
     es_espacio = caracter == " "
@@ -33,8 +31,7 @@ def es_letra_o_espacio(caracter):
 
 
 def es_nombre_valido(nombre):
-    """Devuelve True si el nombre tiene al menos 5 caracteres y
-    contiene solo letras y espacios."""
+    """Devuelve True si el nombre tiene al menos 5 caracteres y contiene solo letras y espacios."""
     if len(nombre) < MIN_CARACTERES_NOMBRE:
         return False
     for i in range(len(nombre)):
@@ -44,18 +41,16 @@ def es_nombre_valido(nombre):
 
 
 def pedir_entero_en_rango(mensaje, minimo, maximo):
-    """Pide un número entero hasta que esté entre minimo y maximo
-    (inclusive) y lo devuelve."""
+    """Pide un número entero hasta que esté entre minimo y maximo y lo devuelve."""
     texto = input(mensaje)
     while not es_entero(texto) or not (minimo <= int(texto) <= maximo):
-        print("Error: ingresá un número entero entre", minimo, "y",
-              maximo)
+        print("Error: ingresá un número entero entre", minimo, "y", maximo)
         texto = input(mensaje)
     return int(texto)
 
 
 def pedir_nota(numero_parcial):
-    """Pide la nota del parcial indicado (entre 0 y 10) y la devuelve."""
+    """Pide la nota del parcial indicado y la devuelve."""
     mensaje = "Nota del parcial " + str(numero_parcial) + " (0 a 10): "
     return pedir_entero_en_rango(mensaje, MIN_NOTA_PARCIAL, MAX_NOTA_PARCIAL)
 

@@ -68,7 +68,9 @@ def invertir_nombre(nombre):
 
 
 def contar_cant_vocales(nombre):
-    """Devuelve cuántas vocales tiene el nombre."""
+    """
+    Devuelve cuántas vocales tiene el nombre.
+    """
     cantidad_vocales = 0
     for i in range(len(nombre)):
         caracter = nombre[i]
