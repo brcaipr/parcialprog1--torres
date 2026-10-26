@@ -14,7 +14,7 @@ def carga_de_alumnos():
     cantidad = validaciones.pedir_cantidad_alumnos()
 
     for i in range(cantidad):
-        print("*** Alumno", i + 1, "de", cantidad, "***")
+        print("Alumno", i + 1, "de", cantidad)
         nombre = validaciones.pedir_nombre()
         nota_1 = validaciones.pedir_nota(1)
         nota_2 = validaciones.pedir_nota(2)
