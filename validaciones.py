@@ -9,11 +9,13 @@ MIN_CARACTERES_NOMBRE = 5
 
 def pedir_cantidad_alumnos():
     """Pide la cantidad de alumnos y la devuelve."""
-    return pedir_entero_en_rango("Cantidad de alumnos (puede ser de 1 a 30): ",MIN_ALUMNOS, MAX_ALUMNOS)
+    return pedir_entero_en_rango("Cantidad de alumnos (puede ser de 1 a 30): ",
+                                 MIN_ALUMNOS, MAX_ALUMNOS)
 
 
 def es_entero(texto):
-    """Devuelve True si el texto tiene al menos un carácter y son todos dígitos del 0 al 9."""
+    """Devuelve True si el texto tiene al menos un carácter
+      y son todos dígitos del 0 al 9."""
     if len(texto) == 0:
         return False
     for i in range(len(texto)):
@@ -31,7 +33,8 @@ def es_letra_o_espacio(caracter):
 
 
 def es_nombre_valido(nombre):
-    """Devuelve True si el nombre tiene al menos 5 caracteres y contiene solo letras y espacios."""
+    """Devuelve True si el nombre tiene al menos 5 caracteres
+      y contiene solo letras y espacios."""
     if len(nombre) < MIN_CARACTERES_NOMBRE:
         return False
     for i in range(len(nombre)):
@@ -41,7 +44,8 @@ def es_nombre_valido(nombre):
 
 
 def pedir_entero_en_rango(mensaje, minimo, maximo):
-    """Pide un número entero hasta que esté entre minimo y maximo y lo devuelve."""
+    """Pide un número entero hasta que esté entre 
+    minimo y maximo y lo devuelve."""
     texto = input(mensaje)
     while not es_entero(texto) or not (minimo <= int(texto) <= maximo):
         print("Error: ingresá un número entero entre", minimo, "y", maximo)
@@ -59,6 +63,7 @@ def pedir_nombre():
     """Pide un nombre hasta que sea válido y lo devuelve."""
     nombre = input("Nombre del alumno: ")
     while not es_nombre_valido(nombre):
-        print("Dato invalido: el nombre debe tener al menos", MIN_CARACTERES_NOMBRE, "caracteres")
+        print("Dato invalido: el nombre debe tener al menos",
+               MIN_CARACTERES_NOMBRE, "caracteres")
         nombre = input("Nombre del alumno: ")
     return nombre
