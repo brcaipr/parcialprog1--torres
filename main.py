@@ -25,7 +25,6 @@ def carga_de_alumnos():
         notas_parcial_2 = notas_parcial_2 + [nota_2]
         promedios = promedios + [promedio]
 
-    print()
     print("Se cargaron", cantidad, "alumnos correctamente.")
     return nombres, notas_parcial_1, notas_parcial_2, promedios
 
