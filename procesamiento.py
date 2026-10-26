@@ -48,3 +48,12 @@ def contar_por_nota(promedios):
         else:
             desaprobados = desaprobados + 1
     return promocion, aprobados, desaprobados
+
+#Punto 5)
+def buscar_alumno(nombres, nombre_buscado):
+    """Muestra la posicion del nombre buscado"""
+    indice_alumno_buscado = -1 #agrego -1 para que si no encuentra lo buscado, se posicione en un indice inexistente
+    for i in range(len(nombres)):
+        if nombres[i] == nombre_buscado:
+            indice_alumno_buscado = i
+    return indice_alumno_buscado

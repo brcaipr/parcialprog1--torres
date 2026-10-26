@@ -34,7 +34,7 @@ def mostrar_listado(nombres,nota_1,nota_2,promedios):
     for i in range(len(nombres)):
         print(nombres[i], "1° Parcial:", nota_1[i], "2° Parcial:", nota_2[i], "Prom:", promedios[i])
 
-
+#punto 3)
 def mostrar_estadisticas(nombres,promedios):
     """Muestro el promedio gral, el mayor y peor promedio y los alumnos aprobados/desaprobados"""
     promedio_general = procesamiento.calcular_promedio_general(promedios)
@@ -48,7 +48,20 @@ def mostrar_estadisticas(nombres,promedios):
     print("La cantidad de alumnos aprobados son: ", aprobados)
     print("La cantidad de alumnos desaprobados son: ", desaprobados)
 
+#Punto 5)
+def buscar_alumno(nombres, nota_1, nota_2, promedios):
+    nombre_buscado = input("Ingrese el nombre del alumno a buscar: ")
+    indice_buscado = procesamiento.buscar_alumno(nombres, nombre_buscado)
 
+    if indice_buscado == -1:
+        print("El alumno ingresado no existe")
+    else:
+        print("Alumno: ", nombres[indice_buscado])
+        print("Nota 1°: ", nota_1[indice_buscado])
+        print("Nota 2|: ", nota_2[indice_buscado])
+        print("Promedio: ", promedios[indice_buscado])
+
+    
 def mostrar_menu():
     """Muestra las opciones del menú principal."""
     print()
@@ -83,8 +96,13 @@ def main():
                     print("No se pueden mostrar estadisticas sin que se carguen alumnos.")
                 else:
                     mostrar_estadisticas(nombres,promedios)
-            case "4" | "5" | "6":
+            case "4" | "6":
                 print("Opción en mantenimiento.")
+            case "5":
+                if len(nombres) == 0:
+                    print("No se pueden mostrar estadisticas sin que se carguen alumnos.")
+                else:
+                    buscar_alumno(nombres, notas_parcial_1, notas_parcial_2, promedios)
             case "0":
                 print("Cerrando programa...")
             case _:
