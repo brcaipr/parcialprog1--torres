@@ -3,8 +3,7 @@ import procesamiento
 
 
 def carga_de_alumnos():
-    """Pide los datos de todos los alumnos y devuelve las cuatro listas
-    paralelas: nombres, notas del parcial 1, notas del parcial 2 y
+    """Pide los datos de todos los alumnos y devuelve las cuatro listas paralelas: nombres, notas del parcial 1, notas del parcial 2 y
     promedios."""
     nombres = []
     notas_parcial_1 = []

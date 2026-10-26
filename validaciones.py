@@ -51,7 +51,7 @@ def pedir_entero_en_rango(mensaje, minimo, maximo):
 
 def pedir_nota(numero_parcial):
     """Pide la nota del parcial indicado y la devuelve."""
-    mensaje = "Nota del parcial " + str(numero_parcial) + " (0 a 10): "
+    mensaje = "Nota del parcial " + str(numero_parcial) + " (de 0 a 10): "
     return pedir_entero_en_rango(mensaje, MIN_NOTA_PARCIAL, MAX_NOTA_PARCIAL)
 
 
@@ -59,6 +59,6 @@ def pedir_nombre():
     """Pide un nombre hasta que sea válido y lo devuelve."""
     nombre = input("Nombre del alumno: ")
     while not es_nombre_valido(nombre):
-        print("Error: el nombre debe tener al menos", MIN_CARACTERES_NOMBRE, "caracteres y solo letras y espacios.")
+        print("Dato invalido: el nombre debe tener al menos", MIN_CARACTERES_NOMBRE, "caracteres")
         nombre = input("Nombre del alumno: ")
     return nombre
