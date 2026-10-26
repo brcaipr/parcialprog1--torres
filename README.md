@@ -9,7 +9,7 @@ Desde un menú se puede:
 1. Cargar entre 1 y 30 alumnos con su nombre y las notas de los dos parciales.
 2. Ver el listado de alumnos con sus notas y su promedio.
 3. Ver las estadísticas: promedio general, mejor y peor promedio, y cuántos alumnos promocionan, aprueban y desaprueban.
-4. Ver el ranking del curso, ordenado de mayor a menor promedio con el método burbuja.
+4. Ver el ranking del curso, ordenado de mayor a menor promedio con el método burbuja. (EN MANTENIMIENTO)
 5. Buscar un alumno por su nombre y ver cómo le fue.
 6. Jugar con un nombre: contar sus vocales y mostrarlo al revés.
 
