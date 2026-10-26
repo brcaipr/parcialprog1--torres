@@ -33,3 +33,18 @@ def menor_indice_prom(promedios):
         if promedios[i] < promedios[menor_indice]:
             menor_indice = i
     return menor_indice
+
+
+def contar_por_nota(promedios):
+    """cuenta los alumnos dependiendo de la nota"""
+    promocion = 0
+    aprobados = 0
+    desaprobados = 0
+    for i in range(len(promedios)):
+        if promedios[i] >= NOTA_PROMOCION:
+            promocion = promocion + 1
+        elif promedios[i] >= NOTA_APROBACION:
+            aprobados = aprobados + 1
+        else:
+            desaprobados = desaprobados + 1
+    return promocion, aprobados, desaprobados

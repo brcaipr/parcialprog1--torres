@@ -28,6 +28,7 @@ def carga_de_alumnos():
     print("Se cargaron", cantidad, "alumnos correctamente.")
     return nombres, notas_parcial_1, notas_parcial_2, promedios
 
+
 def mostrar_listado(nombres,nota_1,nota_2,promedios):
     """Muestra el nombre, las dos notas y el promedio total"""
     for i in range(len(nombres)):
@@ -39,11 +40,13 @@ def mostrar_estadisticas(nombres,promedios):
     promedio_general = procesamiento.calcular_promedio_general(promedios)
     mayor_indice = procesamiento.mayor_indice_prom(promedios)
     menor_indice = procesamiento.menor_indice_prom(promedios)
-
+    promocionados, aprobados, desaprobados = procesamiento.contar_por_nota(promedios)
     print("El promedio general es: ", promedio_general)
     print("El mayor promedio es: ", promedios[mayor_indice], "y corresponde a: ", nombres[mayor_indice])
     print("El menor promedio es: ", promedios[menor_indice], "y corresponde a: ", nombres[menor_indice])
-
+    print("La cantidad de alumnos promocionados son: ", promocionados)
+    print("La cantidad de alumnos aprobados son: ", aprobados)
+    print("La cantidad de alumnos desaprobados son: ", desaprobados)
 
 
 def mostrar_menu():
