@@ -14,7 +14,7 @@ def carga_de_alumnos():
     cantidad = validaciones.pedir_cantidad_alumnos()
 
     for i in range(cantidad):
-        print("--- Alumno", i + 1, "de", cantidad, "---")
+        print("*** Alumno", i + 1, "de", cantidad, "***")
         nombre = validaciones.pedir_nombre()
         nota_1 = validaciones.pedir_nota(1)
         nota_2 = validaciones.pedir_nota(2)
@@ -27,6 +27,11 @@ def carga_de_alumnos():
 
     print("Se cargaron", cantidad, "alumnos correctamente.")
     return nombres, notas_parcial_1, notas_parcial_2, promedios
+
+def mostrar_listado(nombres,nota_1,nota_2,promedios):
+    """Muestra el nombre, las dos notas y el promedio total"""
+    for i in range(len(nombres)):
+        print(nombres[i], "1° Parcial:", nota_1[i], "2° Parcial:", nota_2[i], "Prom:", promedios[i])
 
 
 
@@ -56,10 +61,10 @@ def main():
         opcion = input("Elegí una opción: ")
         match opcion:
             case "1":
-                nombres, notas_parcial_1, notas_parcial_2, promedios = (
-                    carga_de_alumnos()
-                )
-            case "2"| "3" | "4" | "5" | "6":
+                nombres, notas_parcial_1, notas_parcial_2, promedios = (carga_de_alumnos())
+            case "2":
+                mostrar_listado(nombres, notas_parcial_1, notas_parcial_2, promedios)
+            case "3" | "4" | "5" | "6":
                 print("Opción en mantenimiento.")
             case "0":
                 print("Cerrando programa...")
