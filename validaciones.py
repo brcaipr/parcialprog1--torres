@@ -1,6 +1,15 @@
+#CONSTANTES
+
+MIN_ALUMNOS = 1
+MAX_ALUMNOS = 30
+MIN_NOTA_PARCIAL = 0
+MAX_NOTA_PARCIAL = 10
+MIN_CARACTERES_NOMBRE = 5
+
+
 def pedir_cantidad_alumnos():
     """Pide la cantidad de alumnos (entre 1 y 30) y la devuelve."""
-    return pedir_entero_en_rango("Cantidad de alumnos (1 a 30): ",1, 30)
+    return pedir_entero_en_rango("Cantidad de alumnos (1 a 30): ",MIN_ALUMNOS, MAX_ALUMNOS)
 
 
 def es_entero(texto):
@@ -26,7 +35,7 @@ def es_letra_o_espacio(caracter):
 def es_nombre_valido(nombre):
     """Devuelve True si el nombre tiene al menos 5 caracteres y
     contiene solo letras y espacios."""
-    if len(nombre) < 5:
+    if len(nombre) < MIN_CARACTERES_NOMBRE:
         return False
     for i in range(len(nombre)):
         if not es_letra_o_espacio(nombre[i]):
@@ -48,13 +57,13 @@ def pedir_entero_en_rango(mensaje, minimo, maximo):
 def pedir_nota(numero_parcial):
     """Pide la nota del parcial indicado (entre 0 y 10) y la devuelve."""
     mensaje = "Nota del parcial " + str(numero_parcial) + " (0 a 10): "
-    return pedir_entero_en_rango(mensaje, 0, 10)
+    return pedir_entero_en_rango(mensaje, MIN_NOTA_PARCIAL, MAX_NOTA_PARCIAL)
 
 
 def pedir_nombre():
     """Pide un nombre hasta que sea válido y lo devuelve."""
     nombre = input("Nombre del alumno: ")
     while not es_nombre_valido(nombre):
-        print("Error: el nombre debe tener al menos", 5, "caracteres y solo letras y espacios.")
+        print("Error: el nombre debe tener al menos", MIN_CARACTERES_NOMBRE, "caracteres y solo letras y espacios.")
         nombre = input("Nombre del alumno: ")
     return nombre
